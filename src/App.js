@@ -16,6 +16,8 @@ import {
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen'
 
+import t from './i18n'
+
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter
@@ -57,6 +59,7 @@ const styles = StyleSheet.create({
 
 const App = () => (
   <>
+    <Text>{t('HelloWorld')}</Text>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView>
       <ScrollView
