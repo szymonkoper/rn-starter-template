@@ -1,1 +1,1 @@
-export { default, initialize } from './translate'
+export { default } from './initialize'

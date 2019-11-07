@@ -15,9 +15,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 
-import t, { initialize as i18nextInitialize } from './i18n'
+import i18nextInitialize from './i18n'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -74,63 +74,67 @@ function initialize() {
 
 initialize()
 
-const App = () => (
-  <>
-    <StatusBar barStyle="dark-content" />
-    <SafeAreaView>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}
-      >
-        <Header />
-        {global.HermesInternal == null ? null : (
-          <View style={styles.engine}>
-            <Text style={styles.footer}>Engine: Hermes</Text>
-          </View>
-        )}
-        <View style={styles.body}>
-          <Text>{t('HelloWorld')}</Text>
-          <Text>
-            <Trans
-              i18nKey="ComplexTranslationExample"
-              values={{ name: 'Szymon' }}
-            >
-              <Text style={styles.textName} />
-              <Text style={styles.textComplex} />
-              <Text style={styles.textExample} />
-            </Trans>
-          </Text>
-          <View style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Step One</Text>
-            <Text style={styles.sectionDescription}>
-              Edit
-              <Text style={styles.highlight}> App.js </Text>
-              to change this screen and then come back to see your edits.
+const App = () => {
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}
+        >
+          <Header />
+          {global.HermesInternal == null ? null : (
+            <View style={styles.engine}>
+              <Text style={styles.footer}>Engine: Hermes</Text>
+            </View>
+          )}
+          <View style={styles.body}>
+            <Text>{t('HelloWorld')}</Text>
+            <Text>
+              <Trans
+                i18nKey="ComplexTranslationExample"
+                values={{ name: 'Szymon' }}
+              >
+                <Text style={styles.textName} />
+                <Text style={styles.textComplex} />
+                <Text style={styles.textExample} />
+              </Trans>
             </Text>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionDescription}>
+                Edit
+                <Text style={styles.highlight}> App.js </Text>
+                to change this screen and then come back to see your edits.
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Text style={styles.sectionDescription}>
+                <ReloadInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Debug</Text>
+              <Text style={styles.sectionDescription}>
+                <DebugInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Learn More</Text>
+              <Text style={styles.sectionDescription}>
+                Read the docs to discover what to do next:
+              </Text>
+            </View>
+            <LearnMoreLinks />
           </View>
-          <View style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>See Your Changes</Text>
-            <Text style={styles.sectionDescription}>
-              <ReloadInstructions />
-            </Text>
-          </View>
-          <View style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Debug</Text>
-            <Text style={styles.sectionDescription}>
-              <DebugInstructions />
-            </Text>
-          </View>
-          <View style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Learn More</Text>
-            <Text style={styles.sectionDescription}>
-              Read the docs to discover what to do next:
-            </Text>
-          </View>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  </>
-)
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  )
+}
 
 export default App
