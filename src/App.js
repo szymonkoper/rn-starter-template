@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
 
 const App = () => (
   <>
-    <Text>{t('HelloWorld')}</Text>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView>
       <ScrollView
@@ -73,6 +72,7 @@ const App = () => (
           </View>
         )}
         <View style={styles.body}>
+          <Text>{t('HelloWorld')}</Text>
           <View style={styles.sectionContainer}>
             <Text style={styles.sectionTitle}>Step One</Text>
             <Text style={styles.sectionDescription}>

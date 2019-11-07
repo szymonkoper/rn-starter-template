@@ -3306,6 +3306,11 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
+i18next-pseudo@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/i18next-pseudo/-/i18next-pseudo-2.1.0.tgz#aea948895d9c436006df5ec699c53f0764c6b780"
+  integrity sha512-HcS/btXYOU8wrfHni9VGrNLAe+Shz4tKvaANEhC4EilgFAj8Vh5JWh+Bx/oCq19NMFidx8NkNQjufz+13eDwsw==
+
 i18next@^19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.0.0.tgz#5418207d7286128e6cfe558e659fa8c60d89794b"
