@@ -15,8 +15,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen'
+import { Trans } from 'react-i18next'
 
-import t from './i18n'
+import t, { initialize as i18nextInitialize } from './i18n'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -54,8 +55,24 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right'
+  },
+  textName: {
+    color: 'red'
+  },
+  textComplex: {
+    color: 'green'
+  },
+  textExample: {
+    fontWeight: 'bold',
+    color: 'blue'
   }
 })
+
+function initialize() {
+  i18nextInitialize()
+}
+
+initialize()
 
 const App = () => (
   <>
@@ -73,6 +90,16 @@ const App = () => (
         )}
         <View style={styles.body}>
           <Text>{t('HelloWorld')}</Text>
+          <Text>
+            <Trans
+              i18nKey="ComplexTranslationExample"
+              values={{ name: 'Szymon' }}
+            >
+              <Text style={styles.textName} />
+              <Text style={styles.textComplex} />
+              <Text style={styles.textExample} />
+            </Trans>
+          </Text>
           <View style={styles.sectionContainer}>
             <Text style={styles.sectionTitle}>Step One</Text>
             <Text style={styles.sectionDescription}>

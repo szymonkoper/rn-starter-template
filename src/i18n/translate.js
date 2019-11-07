@@ -1,5 +1,6 @@
 import i18next from 'i18next'
 import Pseudo from 'i18next-pseudo'
+import { initReactI18next } from 'react-i18next'
 import { getLocales } from 'react-native-localize'
 
 import en from '../../translations/en.json'
@@ -21,6 +22,7 @@ function getSystemLocale() {
     .find(languageCode => LOCALES_CODES.includes(languageCode))
 }
 
+// TODO: Replace with useTranslation hook? https://react.i18next.com/latest/usetranslation-hook
 export default function translate(key, vars = {}) {
   return i18next.t(key, vars)
 }
@@ -41,11 +43,15 @@ export function initialize() {
     {}
   )
 
-  i18next.use(new Pseudo(pseudoLanguageConfig)).init({
-    lng: getAppSettingsLocale() || getSystemLocale(),
-    fallbackLng: FALLBACK_LOCALE.languageCode,
-    resources: localeResources
-  })
+  i18next
+    .use(new Pseudo(pseudoLanguageConfig))
+    .use(initReactI18next)
+    .init({
+      lng: getAppSettingsLocale() || getSystemLocale(),
+      fallbackLng: FALLBACK_LOCALE.languageCode,
+      resources: localeResources,
+      interpolation: {
+        escapeValue: false
+      }
+    })
 }
-
-initialize() // TODO: Move it somewhere else
