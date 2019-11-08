@@ -7,3 +7,4 @@ Contents:
 - styled-components + styled-system
 - localization with i18next + i18next-pseudo + react-i18next
 - react-navigation + initial configuration
+- hidden dev screen after 4 taps at header
