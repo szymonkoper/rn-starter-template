@@ -4,6 +4,7 @@ import { Trans, useTranslation } from 'react-i18next'
 
 import {
   ScreenContainer,
+  ScrollView,
   Section,
   SectionContentText,
   SectionHeaderText,
@@ -16,23 +17,25 @@ const DevScreen = () => {
 
   return (
     <ScreenContainer>
-      <Section>
-        <SectionHeaderText>{t('Dev.VersionTitle')}</SectionHeaderText>
-        <SectionContentText>
-          <Trans
-            i18nKey="Dev.VersionNumbers"
-            values={{
-              buildMode: __DEV__ ? 'development' : 'release',
-              appVersion: VersionNumber.appVersion,
-              buildVersion: VersionNumber.buildVersion,
-              bundleIdentifier: VersionNumber.bundleIdentifier
-            }}
-          >
-            <ValueShortText />
-            <ValueLongText />
-          </Trans>
-        </SectionContentText>
-      </Section>
+      <ScrollView>
+        <Section>
+          <SectionHeaderText>{t('Dev.VersionTitle')}</SectionHeaderText>
+          <SectionContentText>
+            <Trans
+              i18nKey="Dev.VersionNumbers"
+              values={{
+                buildMode: __DEV__ ? 'development' : 'release',
+                appVersion: VersionNumber.appVersion,
+                buildVersion: VersionNumber.buildVersion,
+                bundleIdentifier: VersionNumber.bundleIdentifier
+              }}
+            >
+              <ValueShortText />
+              <ValueLongText />
+            </Trans>
+          </SectionContentText>
+        </Section>
+      </ScrollView>
     </ScreenContainer>
   )
 }

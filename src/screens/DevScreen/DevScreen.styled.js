@@ -12,6 +12,8 @@ export const ScreenContainer = styled.SafeAreaView`
   flex: 1;
 `
 
+export const ScrollView = styled.ScrollView``
+
 export const Section = styled.View`
   border-color: ${textColorSecondary};
   border-width: 1px;
