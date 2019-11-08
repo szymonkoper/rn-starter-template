@@ -16,6 +16,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen'
 import useCounter from '../../hooks/useCounter'
 import * as ScreenNames from '../../navigation/screenNames'
+import navigationShape from '../../navigation/proptypes'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -118,6 +119,10 @@ const ReactNativeIntroScreen = ({ navigation }) => {
       </ScrollView>
     </SafeAreaView>
   )
+}
+
+ReactNativeIntroScreen.propTypes = {
+  navigation: navigationShape.isRequired
 }
 
 export default ReactNativeIntroScreen
