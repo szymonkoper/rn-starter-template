@@ -1,40 +1,38 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native' // TODO: Use styled-components
+import VersionNumber from 'react-native-version-number'
 import { Trans, useTranslation } from 'react-i18next'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white'
-  },
-  textName: {
-    color: 'red'
-  },
-  textComplex: {
-    color: 'green'
-  },
-  textExample: {
-    fontWeight: 'bold',
-    color: 'blue'
-  }
-})
+import {
+  ScreenContainer,
+  Section,
+  SectionContentText,
+  SectionHeaderText,
+  ValueLongText,
+  ValueShortText
+} from './DevScreen.styled'
 
 const DevScreen = () => {
   const { t } = useTranslation()
 
   return (
-    <View style={styles.container}>
-      <Text>{t('HelloWorld')}</Text>
-      <Text>
-        <Trans i18nKey="ComplexTranslationExample" values={{ name: 'Szymon' }}>
-          <Text style={styles.textName} />
-          <Text style={styles.textComplex} />
-          <Text style={styles.textExample} />
-        </Trans>
-      </Text>
-    </View>
+    <ScreenContainer>
+      <Section>
+        <SectionHeaderText>{t('Dev.VersionTitle')}</SectionHeaderText>
+        <SectionContentText>
+          <Trans
+            i18nKey="Dev.VersionNumbers"
+            values={{
+              appVersion: VersionNumber.appVersion,
+              buildVersion: VersionNumber.buildVersion,
+              bundleIdentifier: VersionNumber.bundleIdentifier
+            }}
+          >
+            <ValueShortText />
+            <ValueLongText />
+          </Trans>
+        </SectionContentText>
+      </Section>
+    </ScreenContainer>
   )
 }
 

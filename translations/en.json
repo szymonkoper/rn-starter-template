@@ -1,5 +1,7 @@
 {
   "languageCode": "en",
-  "HelloWorld": "Hello World!",
-  "ComplexTranslationExample": "Hello <0>{{name}}</0>, this is <1>complex</1> translation <2>example</2>."
+  "Dev": {
+    "VersionTitle": "Version",
+    "VersionNumbers": "App version:\n<0>{{appVersion}}</0>,\n\nBuild version:\n<0>{{buildVersion}}</0>,\n\nBundle identifier:\n<1>{{bundleIdentifier}}</1>"
+  }
 }
