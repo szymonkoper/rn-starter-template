@@ -9,3 +9,4 @@ Contents:
 - react-navigation + initial configuration
 - hidden dev screen after 4 taps at header
 - prop-types
+- react-native-version-number + react-native-version for native version updates
