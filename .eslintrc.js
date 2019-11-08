@@ -4,6 +4,13 @@ module.exports = {
     'jest/globals': true
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.json', '.native.js']
+      }
+    }
+  },
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
