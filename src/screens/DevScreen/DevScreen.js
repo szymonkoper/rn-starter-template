@@ -22,6 +22,7 @@ const DevScreen = () => {
           <Trans
             i18nKey="Dev.VersionNumbers"
             values={{
+              buildMode: __DEV__ ? 'development' : 'release',
               appVersion: VersionNumber.appVersion,
               buildVersion: VersionNumber.buildVersion,
               bundleIdentifier: VersionNumber.bundleIdentifier

@@ -12,6 +12,7 @@ module.exports = {
     }
   },
   globals: {
+    __DEV__: true,
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },

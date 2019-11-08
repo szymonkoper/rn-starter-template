@@ -2,6 +2,6 @@
   "languageCode": "pl",
   "Dev": {
     "VersionTitle": "Wersja",
-    "VersionNumbers": "Wersja aplikacji:\n<0>{{appVersion}}</0>,\n\nWersja kompilacji:\n<0>{{buildVersion}}</0>,\n\nIdentyfikator pakietu:\n<1>{{bundleIdentifier}}</1>"
+    "VersionNumbers": "Tryb kompilacji:\n<1>{{buildMode}}</1>,\n\nWersja aplikacji:\n<0>{{appVersion}}</0>,\n\nWersja kompilacji:\n<0>{{buildVersion}}</0>,\n\nIdentyfikator pakietu:\n<1>{{bundleIdentifier}}</1>"
   }
 }
