@@ -181,6 +181,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'androidx.appcompat:appcompat:${rootProject.ext.androidXCore}-rc01'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:${rootProject.ext.androidXCore}-alpha02' // "the dependency on swiperefresh is only needed because of a bug in appcompat library that does not list it as dependency despite referencing classes from that package" (from: https://github.com/kmagiera/react-native-screens)
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
