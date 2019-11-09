@@ -5,7 +5,7 @@ import withLanguageRefresher from './hocs/withLanguageRefresher'
 import initialize from './initialize'
 import NavigationContainer from './navigation'
 
-initialize()
+initialize(store)
 
 // TODO: Add persisistence
 export default _.flowRight(

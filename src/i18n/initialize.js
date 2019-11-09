@@ -1,49 +1,38 @@
 import i18next from 'i18next'
 import Pseudo from 'i18next-pseudo'
 import { initReactI18next } from 'react-i18next'
-import { getLocales } from 'react-native-localize'
+import { languageSelector } from '../reducers/settings/selectors'
+import { FALLBACK_LOCALE, LOCALES, PSEUDO_LOCALE_CODE } from './constants'
 
-import en from '../../translations/en.json'
-import pl from '../../translations/pl.json'
-
-const LOCALES = { en, pl }
-const LOCALES_CODES = Object.keys(LOCALES)
-const FALLBACK_LOCALE = en
-const PSEUDO_LOCALE_KEY = 'pseudo'
-
-function getAppSettingsLocale() {
-  // TODO: Implement user chosen locale
-  return null // PSEUDO_LOCALE_KEY
-}
-
-function getSystemLocale() {
-  return getLocales()
-    .map(({ languageCode }) => languageCode)
-    .find(languageCode => LOCALES_CODES.includes(languageCode))
-}
-
-export default function initialize() {
+export default function initialize(store) {
   const pseudoLanguageConfig = {
     enabled: true,
     wrapped: true,
-    languageToPseudo: PSEUDO_LOCALE_KEY,
+    languageToPseudo: PSEUDO_LOCALE_CODE,
     letterMultiplier: 3
   }
+
+  const language = languageSelector(store.getState().settings)
 
   const localeResources = Object.entries(LOCALES).reduce(
     (acc, [localeKey, locale]) => {
       acc[localeKey] = { translation: locale }
       return acc
     },
-    {}
+    {
+      [PSEUDO_LOCALE_CODE]: {
+        translation: { ...FALLBACK_LOCALE, languageCode: PSEUDO_LOCALE_CODE }
+      }
+    }
   )
 
   i18next
     .use(new Pseudo(pseudoLanguageConfig))
     .use(initReactI18next)
     .init({
-      lng: getAppSettingsLocale() || getSystemLocale(),
+      lng: language,
       fallbackLng: FALLBACK_LOCALE.languageCode,
+      postProcess: [PSEUDO_LOCALE_CODE],
       resources: localeResources,
       interpolation: {
         escapeValue: false

@@ -1,6 +1,7 @@
 {
   "languageCode": "en",
   "Dev": {
+    "LanguageTitle": "Language",
     "VersionTitle": "Version",
     "VersionNumbers": "Build mode:\n<1>{{buildMode}}</1>,\n\nApp version:\n<0>{{appVersion}}</0>,\n\nBuild version:\n<0>{{buildVersion}}</0>,\n\nBundle identifier:\n<1>{{bundleIdentifier}}</1>"
   }

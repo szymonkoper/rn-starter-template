@@ -3,6 +3,8 @@ import Text from '../../style/components/Text'
 import { fontSizeL, fontSizeS, screenMargin } from '../../style/dimensions'
 import {
   backgroundColorPrimary,
+  backgroundColorSecondary,
+  positiveColor,
   textColorSecondary,
   textColorTertiary
 } from '../../style/colors'
@@ -38,4 +40,20 @@ export const ValueShortText = styled(Text)`
 
 export const ValueLongText = styled(ValueShortText)`
   font-size: ${fontSizeS};
+`
+
+export const LanguageOptionsWrapper = styled.View`
+  margin: 16px;
+`
+
+export const LanguageText = styled(Text)`
+  background-color: ${({ isCurrent }) =>
+    isCurrent ? positiveColor : backgroundColorSecondary};
+  color: ${textColorTertiary};
+  flex: 1;
+  font-size: ${fontSizeL};
+  font-weight: ${({ isCurrent }) => (isCurrent ? 'bold' : 'normal')};
+  margin-horizontal: 16px;
+  margin-vertical: 4px;
+  text-align: center;
 `

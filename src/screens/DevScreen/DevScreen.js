@@ -1,8 +1,12 @@
 import React from 'react'
 import VersionNumber from 'react-native-version-number'
+import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
+import { i18nConstants, i18nPropTypes } from '../../i18n'
 
 import {
+  LanguageOptionsWrapper,
+  LanguageText,
   ScreenContainer,
   ScrollView,
   Section,
@@ -12,7 +16,7 @@ import {
   ValueShortText
 } from './DevScreen.styled'
 
-const DevScreen = () => {
+const DevScreen = ({ language, updateLanguage }) => {
   const { t } = useTranslation()
 
   return (
@@ -35,9 +39,31 @@ const DevScreen = () => {
             </Trans>
           </SectionContentText>
         </Section>
+
+        <Section>
+          <SectionHeaderText>{t('Dev.LanguageTitle')}</SectionHeaderText>
+          <LanguageOptionsWrapper>
+            {i18nConstants.LOCALES_CODES.map(languageCode => (
+              <LanguageText
+                key={languageCode}
+                isCurrent={language === languageCode}
+                onPress={() => {
+                  updateLanguage(languageCode)
+                }}
+              >
+                {languageCode}
+              </LanguageText>
+            ))}
+          </LanguageOptionsWrapper>
+        </Section>
       </ScrollView>
     </ScreenContainer>
   )
+}
+
+DevScreen.propTypes = {
+  language: i18nPropTypes.languagesShape.isRequired,
+  updateLanguage: PropTypes.func.isRequired
 }
 
 export default DevScreen
