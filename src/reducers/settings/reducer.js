@@ -4,7 +4,7 @@ const initialState = {
   language: null
 }
 
-export default (state = initialState, action) => {
+export default function(state = initialState, action) {
   const { payload, type } = action
 
   switch (type) {
