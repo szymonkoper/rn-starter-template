@@ -11,3 +11,4 @@ Contents:
 - prop-types
 - react-native-version-number + react-native-version for native version updates
 - redux react-redux redux-logger redux-thunk redux-persist with reducer for settings (app language)
+- react-native-config with preview of the file
