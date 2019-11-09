@@ -31,6 +31,7 @@ export const SectionHeaderText = styled(Text)`
 
 export const SectionContentText = styled(Text)`
   color: ${textColorSecondary};
+  font-size: ${fontSizeS};
 `
 
 export const ValueShortText = styled(Text)`

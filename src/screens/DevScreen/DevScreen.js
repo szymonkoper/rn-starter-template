@@ -2,6 +2,7 @@ import React from 'react'
 import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
+import Config from 'react-native-config'
 import { i18nConstants, i18nPropTypes } from '../../i18n'
 
 import {
@@ -55,6 +56,17 @@ const DevScreen = ({ language, updateLanguage }) => {
               </LanguageText>
             ))}
           </LanguageOptionsWrapper>
+        </Section>
+
+        <Section>
+          <SectionHeaderText>{t('Dev.EnvTitle')}</SectionHeaderText>
+          {Object.entries(Config)
+            .filter(([_, value]) => typeof value === 'string')
+            .map(([key, value]) => (
+              <SectionContentText key={key}>
+                {`${key}=`} <ValueLongText>{`${value}`}</ValueLongText>
+              </SectionContentText>
+            ))}
         </Section>
       </ScrollView>
     </ScreenContainer>
