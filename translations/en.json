@@ -1,6 +1,7 @@
 {
   "languageCode": "en",
   "Dev": {
+    "LottieTitle": "Lottie animations",
     "EnvTitle": ".env file",
     "LanguageTitle": "Language",
     "VersionTitle": "Version",

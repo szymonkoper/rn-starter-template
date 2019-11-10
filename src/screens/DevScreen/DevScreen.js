@@ -8,11 +8,13 @@ import { i18nConstants, i18nPropTypes } from '../../i18n'
 import {
   LanguageOptionsWrapper,
   LanguageText,
+  LottieViewWrapper,
   ScreenContainer,
   ScrollView,
   Section,
   SectionContentText,
   SectionHeaderText,
+  StyledLottieView,
   ValueLongText,
   ValueShortText
 } from './DevScreen.styled'
@@ -67,6 +69,28 @@ const DevScreen = ({ language, updateLanguage }) => {
                 {`${key}=`} <ValueLongText>{`${value}`}</ValueLongText>
               </SectionContentText>
             ))}
+        </Section>
+
+        <Section>
+          <SectionHeaderText>{t('Dev.LottieTitle')}</SectionHeaderText>
+          <LottieViewWrapper>
+            <StyledLottieView
+              key="empty"
+              source={require('../../assets/lottie/empty.json')}
+            />
+            <StyledLottieView
+              key="success"
+              source={require('../../assets/lottie/success.json')}
+            />
+            <StyledLottieView
+              key="failure"
+              source={require('../../assets/lottie/failure.json')}
+            />
+            <StyledLottieView
+              key="loading"
+              source={require('../../assets/lottie/loading.json')}
+            />
+          </LottieViewWrapper>
         </Section>
       </ScrollView>
     </ScreenContainer>

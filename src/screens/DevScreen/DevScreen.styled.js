@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import LottieView from 'lottie-react-native'
 import Text from '../../style/components/Text'
 import { fontSizeL, fontSizeS, screenMargin } from '../../style/dimensions'
 import {
@@ -57,4 +58,15 @@ export const LanguageText = styled(Text)`
   margin-horizontal: 16px;
   margin-vertical: 4px;
   text-align: center;
+`
+
+export const LottieViewWrapper = styled.View`
+  align-items: center;
+`
+
+export const StyledLottieView = styled(LottieView).attrs(() => ({
+  autoPlay: true,
+  loop: true
+}))`
+  width: 30%;
 `

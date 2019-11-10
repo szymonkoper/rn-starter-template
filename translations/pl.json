@@ -1,6 +1,7 @@
 {
   "languageCode": "pl",
   "Dev": {
+    "LottieTitle": "Animacje Lottie",
     "EnvTitle": "Plik .env",
     "LanguageTitle": "Język",
     "VersionTitle": "Wersja",
