@@ -49,7 +49,7 @@ const DevScreen = ({ language, updateLanguage }) => {
                 key={languageCode}
                 isCurrent={language === languageCode}
                 onPress={() => {
-                  updateLanguage(languageCode)
+                  if (language !== languageCode) updateLanguage(languageCode)
                 }}
               >
                 {languageCode}
