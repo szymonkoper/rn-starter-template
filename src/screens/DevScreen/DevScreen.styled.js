@@ -5,9 +5,11 @@ import { fontSizeL, fontSizeS, screenMargin } from '../../style/dimensions'
 import {
   backgroundColorPrimary,
   backgroundColorSecondary,
+  backgroundColorTertiary,
   positiveColor,
   textColorSecondary,
-  textColorTertiary
+  textColorTertiary,
+  white
 } from '../../style/colors'
 
 export const ScreenContainer = styled.SafeAreaView`
@@ -69,4 +71,18 @@ export const StyledLottieView = styled(LottieView).attrs(() => ({
   loop: true
 }))`
   width: 30%;
+`
+
+export const ApiCallButton = styled.TouchableOpacity`
+  align-items: center;
+  background-color: ${backgroundColorTertiary};
+  border-radius: 16px;
+  justify-content: center;
+  min-height: 40px;
+  width: 50%;
+`
+
+export const ApiCallButtonText = styled(Text)`
+  color: ${white};
+  font-size: ${fontSizeS};
 `

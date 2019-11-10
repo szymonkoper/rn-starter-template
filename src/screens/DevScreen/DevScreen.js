@@ -3,9 +3,12 @@ import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
 import Config from 'react-native-config'
+import { useLazyQuery } from '@apollo/react-hooks'
 import { i18nConstants, i18nPropTypes } from '../../i18n'
-
+import { schemaQueriesQuery } from '../../api/graphql/queries/schemaQueries'
 import {
+  ApiCallButton,
+  ApiCallButtonText,
   LanguageOptionsWrapper,
   LanguageText,
   LottieViewWrapper,
@@ -19,8 +22,54 @@ import {
   ValueShortText
 } from './DevScreen.styled'
 
+const CallResultInfo = ({
+  title,
+  get,
+  requestState: { loading, error, data }
+}) => {
+  const { t } = useTranslation()
+  return (
+    <Section>
+      <SectionHeaderText>{title}</SectionHeaderText>
+      <SectionContentText>
+        {`loading: ${loading ? t('Common.Yes') : t('Common.No')}`}
+      </SectionContentText>
+      <SectionContentText>
+        {`error: ${error ? t('Common.Yes') : t('Common.No')}`}
+      </SectionContentText>
+      <SectionContentText>
+        {`data: ${data ? t('Common.Yes') : t('Common.No')}`}
+      </SectionContentText>
+      <ApiCallButton onPress={get}>
+        <ApiCallButtonText>Call</ApiCallButtonText>
+      </ApiCallButton>
+    </Section>
+  )
+}
+
+CallResultInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  get: PropTypes.func.isRequired,
+  requestState: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    data: PropTypes.shape({}),
+    error: PropTypes.shape({})
+  })
+}
+
+CallResultInfo.defaultProps = {
+  requestState: {
+    data: null,
+    error: null
+  }
+}
+
 const DevScreen = ({ language, updateLanguage }) => {
   const { t } = useTranslation()
+  const [getGqlSchema, getGqlSchemaRequestState] = useLazyQuery(
+    schemaQueriesQuery,
+    { fetchPolicy: 'no-cache' }
+  )
 
   return (
     <ScreenContainer>
@@ -69,6 +118,15 @@ const DevScreen = ({ language, updateLanguage }) => {
                 {`${key}=`} <ValueLongText>{`${value}`}</ValueLongText>
               </SectionContentText>
             ))}
+        </Section>
+
+        <Section>
+          <SectionHeaderText>API</SectionHeaderText>
+          <CallResultInfo
+            title="GraphQL"
+            get={getGqlSchema}
+            requestState={getGqlSchemaRequestState}
+          />
         </Section>
 
         <Section>

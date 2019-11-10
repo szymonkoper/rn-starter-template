@@ -13,3 +13,4 @@ Contents:
 - redux react-redux redux-logger redux-thunk redux-persist with reducer for settings (app language)
 - react-native-config with preview of the file
 - lottie-react-native + 4 example files for success, failure, loading and empty state
+- api client: apollo graphql

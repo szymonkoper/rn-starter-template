@@ -12,6 +12,7 @@ export const negativeColor = pinkRaspberry
 
 export const backgroundColorPrimary = white
 export const backgroundColorSecondary = laurelGreen
+export const backgroundColorTertiary = lapisLazuli
 
 export const textColorPrimary = black
 export const textColorSecondary = eerieBlack

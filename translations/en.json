@@ -1,5 +1,9 @@
 {
   "languageCode": "en",
+  "Common": {
+    "Yes": "Yes",
+    "No": "No"
+  },
   "Dev": {
     "LottieTitle": "Lottie animations",
     "EnvTitle": ".env file",
