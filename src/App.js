@@ -2,12 +2,12 @@ import _ from 'lodash'
 import store, { persistor } from './store'
 import withRedux from './hocs/withRedux'
 import withPersistGate from './hocs/withPersistGate'
-import initialize from './initialize'
+import initialize, { i18nextInitialize } from './initialize'
 import NavigationContainer from './navigation'
 
-initialize(store)
+initialize()
 
 export default _.flowRight(
   withRedux(store),
-  withPersistGate(persistor)
+  withPersistGate(persistor, () => i18nextInitialize(store))
 )(NavigationContainer)

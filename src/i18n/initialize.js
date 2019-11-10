@@ -2,6 +2,7 @@ import i18next from 'i18next'
 import Pseudo from 'i18next-pseudo'
 import { initReactI18next } from 'react-i18next'
 import { languageSelector } from '../reducers/settings/selectors'
+import getLocale from './getLocale'
 import { FALLBACK_LOCALE, LOCALES, PSEUDO_LOCALE_CODE } from './constants'
 
 export default function initialize(store) {
@@ -12,7 +13,7 @@ export default function initialize(store) {
     letterMultiplier: 3
   }
 
-  const language = languageSelector(store.getState().settings)
+  const language = getLocale(languageSelector(store.getState().settings))
 
   const localeResources = Object.entries(LOCALES).reduce(
     (acc, [localeKey, locale]) => {
