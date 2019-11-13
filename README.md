@@ -14,3 +14,4 @@ Contents:
 - react-native-config with preview of the file
 - lottie-react-native + 4 example files for success, failure, loading and empty state
 - api client: apollo graphql
+- unit and snapshots tests redux-testkit and with react-native-testing-library
