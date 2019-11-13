@@ -34,6 +34,9 @@ describe('DevScreen', () => {
   it('calls updateLanguage actions when pressed correctly', () => {
     const { getByText } = renderedScreen
 
+    fireEvent.press(getByText('pl'))
+    expect(props.updateLanguage).not.toHaveBeenCalled()
+
     fireEvent.press(getByText('en'))
     expect(props.updateLanguage).toHaveBeenCalledWith('en')
   })
