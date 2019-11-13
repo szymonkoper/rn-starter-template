@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#000",
+        "fontSize": 26,
+      },
+      Object {
+        "fontSize": 12,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 26,
+        },
+        Object {
+          "color": "red",
+        },
+      ]
+    }
+  >
+    Nested text
+  </Text>
+   and usual text
+</Text>
+`;
