@@ -1,5 +1,6 @@
 Contents:
 
+- CI for the template
 - .gitignore
 - settings for .vscode
 - configured linter
