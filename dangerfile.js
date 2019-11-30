@@ -93,11 +93,8 @@ async function verifyLinter() {
   }
 }
 
-verifyUpdatedLockedPackages()
-schedule(verifyPackageVersionUpdate)
-schedule(verifyLinter)
-schedule(
-  istanbulCoverage({
+function verifyTestsCoverage() {
+  return istanbulCoverage({
     coveragePath: {
       path: path.resolve(__dirname, './coverage/lcov.info'),
       type: 'lcov'
@@ -111,4 +108,9 @@ schedule(
       lines: 50
     }
   })
-)
+}
+
+verifyUpdatedLockedPackages()
+schedule(verifyPackageVersionUpdate)
+schedule(verifyLinter)
+schedule(verifyTestsCoverage())
