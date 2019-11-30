@@ -88,6 +88,27 @@ async function verifyLinter() {
   }
 }
 
+function verifyTests() {
+  try {
+    const {
+      numFailedTests,
+      numTotalTests
+    } = require('./coverage/test-results.json')
+
+    if (numFailedTests > 0) {
+      fail(
+        `Unit tests failed. Error in ${numFailedTests} of total ${numTotalTests} tests`
+      )
+    } else {
+      message('Unit tests passed')
+    }
+  } catch (error) {
+    fail(
+      `Could not verify tests results. Error message: <i>${error.message}</i>`
+    )
+  }
+}
+
 function verifyTestsCoverage() {
   return istanbulCoverage({
     coveragePath: {
@@ -108,5 +129,6 @@ function verifyTestsCoverage() {
 verifyUpdatedLockedPackages()
 schedule(verifyPackageVersionUpdate)
 schedule(verifyLinter)
-schedule(yarnPlugin())
+verifyTests()
 schedule(verifyTestsCoverage())
+schedule(yarnPlugin())
