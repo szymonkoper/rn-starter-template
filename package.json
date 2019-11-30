@@ -50,6 +50,7 @@
     "babel-jest": "^24.9.0",
     "babel-plugin-styled-components": "^1.10.6",
     "cross-fetch": "^3.0.4",
+    "danger": "^9.2.8",
     "eslint": "^6.7.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
