@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 import { exec } from 'child_process'
 import { danger, fail, message, schedule, warn } from 'danger'
 import { istanbulCoverage } from 'danger-plugin-istanbul-coverage'
@@ -90,17 +91,16 @@ async function verifyLinter() {
 
 function verifyTests() {
   try {
-    const {
-      numFailedTests,
-      numTotalTests
-    } = require('./coverage/test-results.json')
+    const { numFailedTests, numTotalTests } = JSON.parse(
+      fs.readFileSync(path.resolve(__dirname, './coverage/test-results.json'))
+    )
 
-    if (numFailedTests > 0) {
+    if (numFailedTests === 0) {
+      message('Unit tests passed')
+    } else {
       fail(
         `Unit tests failed. Error in ${numFailedTests} of total ${numTotalTests} tests`
       )
-    } else {
-      message('Unit tests passed')
     }
   } catch (error) {
     fail(
