@@ -1,13 +1,15 @@
 module.exports = {
   env: {
     'es6': true,
+    'browser': true,
     'jest/globals': true
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.json', '.native.js']
+        extensions: ['.js', '.jsx', '.json', '.native.js'],
+        paths: ['src', 'assets']
       }
     }
   },

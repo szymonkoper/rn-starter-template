@@ -1,3 +1,5 @@
+It's an opinionated starting template for RN projects.
+
 Contents:
 
 - CI for the template
@@ -16,3 +18,5 @@ Contents:
 - lottie-react-native + 4 example files for success, failure, loading and empty state
 - api client: apollo graphql
 - unit and snapshots tests redux-testkit and with react-native-testing-library
+- absolute paths for imports
+- the project has default setup for Danger.js (it works with CI).

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import LottieView from 'lottie-react-native'
-import Text from '../../style/components/Text'
-import { fontSizeL, fontSizeS, screenMargin } from '../../style/dimensions'
+import Text from 'style/components/Text'
+import { fontSizeL, fontSizeS, screenMargin } from 'style/dimensions'
 import {
   backgroundColorPrimary,
   backgroundColorSecondary,
@@ -10,7 +10,7 @@ import {
   textColorSecondary,
   textColorTertiary,
   white
-} from '../../style/colors'
+} from 'style/colors'
 
 export const ScreenContainer = styled.SafeAreaView`
   background-color: ${backgroundColorPrimary};

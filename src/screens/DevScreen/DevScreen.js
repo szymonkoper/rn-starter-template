@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
 import Config from 'react-native-config'
 import { useLazyQuery } from '@apollo/react-hooks'
-import { i18nConstants, i18nPropTypes } from '../../i18n'
-import { schemaQueriesQuery } from '../../api/graphql/queries/schemaQueries'
+import { i18nConstants, i18nPropTypes } from 'i18n'
+import { schemaQueriesQuery } from 'api/graphql/queries/schemaQueries'
 import {
   ApiCallButton,
   ApiCallButtonText,
@@ -66,10 +66,10 @@ CallResultInfo.defaultProps = {
 
 const DevScreen = ({ language, updateLanguage }) => {
   const { t } = useTranslation()
-  const [getGqlSchema, getGqlSchemaRequestState] = useLazyQuery(
-    schemaQueriesQuery,
-    { fetchPolicy: 'no-cache' }
-  )
+  const [
+    getGqlSchema,
+    getGqlSchemaRequestState
+  ] = useLazyQuery(schemaQueriesQuery, { fetchPolicy: 'no-cache' })
 
   return (
     <ScreenContainer>
@@ -134,19 +134,19 @@ const DevScreen = ({ language, updateLanguage }) => {
           <LottieViewWrapper>
             <StyledLottieView
               key="empty"
-              source={require('../../assets/lottie/empty.json')}
+              source={require('lottie/empty.json')}
             />
             <StyledLottieView
               key="success"
-              source={require('../../assets/lottie/success.json')}
+              source={require('lottie/success.json')}
             />
             <StyledLottieView
               key="failure"
-              source={require('../../assets/lottie/failure.json')}
+              source={require('lottie/failure.json')}
             />
             <StyledLottieView
               key="loading"
-              source={require('../../assets/lottie/loading.json')}
+              source={require('lottie/loading.json')}
             />
           </LottieViewWrapper>
         </Section>
