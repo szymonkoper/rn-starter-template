@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     'es6': true,
+    'browser': true,
     'jest/globals': true
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
