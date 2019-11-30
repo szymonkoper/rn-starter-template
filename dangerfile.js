@@ -2,6 +2,7 @@ import path from 'path'
 import { exec } from 'child_process'
 import { danger, fail, message, schedule, warn } from 'danger'
 import { istanbulCoverage } from 'danger-plugin-istanbul-coverage'
+import yarnPlugin from 'danger-plugin-yarn'
 
 const modifiedFiles = danger.git.modified_files
 
@@ -9,16 +10,10 @@ function verifyUpdatedLockedPackages() {
   const packageChanged = modifiedFiles.includes('package.json')
   const lockfileChanged = modifiedFiles.includes('yarn.lock')
 
-  if (!packageChanged && !lockfileChanged) {
-    message('No dependencies versions were changed')
-  } else if (!packageChanged && lockfileChanged) {
-    message('Dependencies locked versions were updated')
-  } else if (packageChanged && !lockfileChanged) {
+  if (packageChanged && !lockfileChanged) {
     warn(
       'Changes were made to `package.json`, but not to `yarn.lock`. Forgot to install them?'
     )
-  } else {
-    message("Dependencies were updated. That's good")
   }
 }
 
@@ -113,4 +108,5 @@ function verifyTestsCoverage() {
 verifyUpdatedLockedPackages()
 schedule(verifyPackageVersionUpdate)
 schedule(verifyLinter)
+schedule(yarnPlugin())
 schedule(verifyTestsCoverage())
