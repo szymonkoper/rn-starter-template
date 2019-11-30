@@ -1,5 +1,7 @@
+import path from 'path'
 import { exec } from 'child_process'
 import { danger, fail, message, schedule, warn } from 'danger'
+import { istanbulCoverage } from 'danger-plugin-istanbul-coverage'
 
 const modifiedFiles = danger.git.modified_files
 
@@ -94,3 +96,19 @@ async function verifyLinter() {
 verifyUpdatedLockedPackages()
 schedule(verifyPackageVersionUpdate)
 schedule(verifyLinter)
+schedule(
+  istanbulCoverage({
+    coveragePath: {
+      path: path.resolve(__dirname, './coverage/lcov.info'),
+      type: 'lcov'
+    },
+    numberOfEntries: 15,
+    reportFileSet: 'createdOrModified',
+    threshold: {
+      statements: 50,
+      branches: 50,
+      functions: 50,
+      lines: 50
+    }
+  })
+)

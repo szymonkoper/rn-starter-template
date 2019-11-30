@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "test:ci": "yarn test --json --output-file coverage/test-results.json --coverage",
     "lint": "eslint .",
     "postversion": "react-native-version --never-amend"
   },
@@ -51,6 +52,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "cross-fetch": "^3.0.4",
     "danger": "^9.2.8",
+    "danger-plugin-istanbul-coverage": "^1.6.2",
     "eslint": "^6.7.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
