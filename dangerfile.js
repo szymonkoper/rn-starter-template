@@ -1,7 +1,8 @@
 import { danger, fail, message, schedule, warn } from 'danger'
 
+const modifiedFiles = danger.git.modified_files
+
 function verifyUpdatedLockedPackages() {
-  const modifiedFiles = danger.git.modified_files
   const packageChanged = modifiedFiles.includes('package.json')
   const lockfileChanged = modifiedFiles.includes('yarn.lock')
 
@@ -19,6 +20,17 @@ function verifyUpdatedLockedPackages() {
 }
 
 async function verifyPackageVersionUpdate() {
+  const packageChanged = modifiedFiles.includes('package.json')
+
+  function warnPackageNotChanged() {
+    warn('Package version was not updated. Is it intentional?')
+  }
+
+  if (!packageChanged) {
+    warnPackageNotChanged()
+    return
+  }
+
   try {
     const { diff } = await danger.git.diffForFile('package.json')
 
@@ -30,7 +42,7 @@ async function verifyPackageVersionUpdate() {
     if (oldMatch && newMatch) {
       message(`Package version updated from ${oldMatch[1]} to ${newMatch[1]}`)
     } else {
-      warn('Package version was not updated. Is it intentional?')
+      warnPackageNotChanged()
     }
   } catch (error) {
     fail(
