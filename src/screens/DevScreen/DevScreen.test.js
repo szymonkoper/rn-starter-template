@@ -3,7 +3,7 @@ import React from 'react'
 import { fireEvent, render } from 'react-native-testing-library'
 import { I18nextProvider } from 'react-i18next'
 import { MockedProvider } from '@apollo/react-testing'
-import i18next from '../../i18n/__test__/testInitialize' // maybe it should be in tests setup
+import i18next from 'i18n/__test__/testInitialize'
 import DevScreen from './DevScreen'
 
 describe('DevScreen', () => {

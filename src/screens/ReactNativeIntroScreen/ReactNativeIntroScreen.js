@@ -14,9 +14,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen'
-import useCounter from '../../hooks/useCounter'
-import * as ScreenNames from '../../navigation/screenNames'
-import navigationShape from '../../navigation/proptypes'
+import useCounter from 'hooks/useCounter'
+import * as ScreenNames from 'navigation/screenNames'
+import navigationShape from 'navigation/proptypes'
 
 const styles = StyleSheet.create({
   scrollView: {

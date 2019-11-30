@@ -1,5 +1,5 @@
-import en from '../../translations/en.json'
-import pl from '../../translations/pl.json'
+import en from 'translations/en.json'
+import pl from 'translations/pl.json'
 
 export const PSEUDO_LOCALE_CODE = 'pseudo'
 
