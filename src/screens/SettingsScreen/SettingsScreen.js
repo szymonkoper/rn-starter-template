@@ -67,10 +67,6 @@ CallResultInfo.defaultProps = {
 
 const SettingsScreen = ({ language, updateLanguage }) => {
   const { t } = useTranslation()
-  const [
-    callGqlSchemaGet,
-    gqlSchemaGetRequestState
-  ] = useLazyQuery(schemaQueriesQuery, { fetchPolicy: 'no-cache' })
 
   const [restExampleGetRequestState, setRestExampleGetRequestState] = useState({
     loading: false,
@@ -146,11 +142,6 @@ const SettingsScreen = ({ language, updateLanguage }) => {
                 title="REST"
                 get={callRestExampleGet}
                 requestState={restExampleGetRequestState}
-              />
-              <CallResultInfo
-                title="GraphQL"
-                get={callGqlSchemaGet}
-                requestState={gqlSchemaGetRequestState}
               />
             </Section>
 
