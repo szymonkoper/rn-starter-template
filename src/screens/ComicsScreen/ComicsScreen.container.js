@@ -1,4 +1,13 @@
 import { connect } from 'react-redux'
+import { getLatestComic } from 'reducers/api/xkcdRest/latestComicGetRequest/actions'
 import ComicsScreen from './ComicsScreen'
 
-export default connect(null, null)(ComicsScreen)
+const mapStateToProps = ({
+  api: {
+    xkcdRest: { latestComicGetRequest }
+  }
+}) => ({ latestComicGetRequest })
+
+const mapDispatchToProps = { getLatestComic }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComicsScreen)

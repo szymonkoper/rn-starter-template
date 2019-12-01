@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
 import storage from '@react-native-community/async-storage'
+import api from './api'
 import settings from './settings'
 
 const persistenceConfig = {
@@ -14,6 +15,7 @@ const persistenceConfig = {
 export default persistReducer(
   persistenceConfig,
   combineReducers({
+    api,
     settings
   })
 )
