@@ -4,6 +4,9 @@
     "Yes": "Yes",
     "No": "No"
   },
+  "Comics": {
+    "HeaderTitle": "komiksy xkcd"
+  },
   "Dev": {
     "HeaderTitle": "Ustawienia",
     "LottieTitle": "Animacje Lottie",
