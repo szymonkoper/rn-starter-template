@@ -1,4 +1,4 @@
-export const TYPE_SUFFIX = {
+export const VARIANT = {
   REQUEST: 'REQUEST',
   SUCCESS: 'SUCCESS',
   FAILURE: 'FAILURE'
