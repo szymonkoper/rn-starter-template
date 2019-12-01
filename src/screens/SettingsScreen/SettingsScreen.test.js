@@ -4,9 +4,9 @@ import { fireEvent, render } from 'react-native-testing-library'
 import { I18nextProvider } from 'react-i18next'
 import { MockedProvider } from '@apollo/react-testing'
 import i18next from 'i18n/__test__/testInitialize'
-import DevScreen from './DevScreen'
+import SettingsScreen from './SettingsScreen'
 
-describe('DevScreen', () => {
+describe('SettingsScreen', () => {
   let props = null
   let renderedScreen = null
 
@@ -20,7 +20,7 @@ describe('DevScreen', () => {
       <I18nextProvider i18n={i18next}>
         <MockedProvider>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <DevScreen {...props} />
+          <SettingsScreen {...props} />
         </MockedProvider>
       </I18nextProvider>
     )

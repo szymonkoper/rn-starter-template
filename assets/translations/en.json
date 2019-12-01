@@ -7,7 +7,7 @@
   "Comics": {
     "HeaderTitle": "xkcd comics"
   },
-  "Dev": {
+  "Settings": {
     "HeaderTitle": "Settings",
     "LottieTitle": "Lottie animations",
     "EnvTitle": ".env file",

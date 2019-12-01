@@ -1,2 +1,2 @@
-export const Dev = 'Dev'
-export const ReactNativeIntro = 'ReactNativeIntro'
+export const Comics = 'Comics'
+export const Settings = 'Settings'

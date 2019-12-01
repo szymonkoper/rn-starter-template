@@ -21,7 +21,7 @@ import {
   StyledLottieView,
   ValueLongText,
   ValueShortText
-} from './DevScreen.styled'
+} from './SettingsScreen.styled'
 
 const CallResultInfo = ({
   title,
@@ -65,7 +65,7 @@ CallResultInfo.defaultProps = {
   }
 }
 
-const DevScreen = ({ language, updateLanguage }) => {
+const SettingsScreen = ({ language, updateLanguage }) => {
   const { t } = useTranslation()
   const [
     callGqlSchemaGet,
@@ -93,10 +93,10 @@ const DevScreen = ({ language, updateLanguage }) => {
     <ScreenContainer>
       <ScrollView>
         <Section>
-          <SectionHeaderText>{t('Dev.VersionTitle')}</SectionHeaderText>
+          <SectionHeaderText>{t('Settings.VersionTitle')}</SectionHeaderText>
           <SectionContentText>
             <Trans
-              i18nKey="Dev.VersionNumbers"
+              i18nKey="Settings.VersionNumbers"
               values={{
                 buildMode: __DEV__ ? 'development' : 'release',
                 appVersion: VersionNumber.appVersion,
@@ -111,7 +111,7 @@ const DevScreen = ({ language, updateLanguage }) => {
         </Section>
 
         <Section>
-          <SectionHeaderText>{t('Dev.LanguageTitle')}</SectionHeaderText>
+          <SectionHeaderText>{t('Settings.LanguageTitle')}</SectionHeaderText>
           <LanguageOptionsWrapper>
             {i18nConstants.LOCALES_CODES.map(languageCode => (
               <LanguageText
@@ -130,7 +130,7 @@ const DevScreen = ({ language, updateLanguage }) => {
         {__DEV__ && (
           <>
             <Section>
-              <SectionHeaderText>{t('Dev.EnvTitle')}</SectionHeaderText>
+              <SectionHeaderText>{t('Settings.EnvTitle')}</SectionHeaderText>
               {Object.entries(Config)
                 .filter(([_, value]) => typeof value === 'string')
                 .map(([key, value]) => (
@@ -155,7 +155,7 @@ const DevScreen = ({ language, updateLanguage }) => {
             </Section>
 
             <Section>
-              <SectionHeaderText>{t('Dev.LottieTitle')}</SectionHeaderText>
+              <SectionHeaderText>{t('Settings.LottieTitle')}</SectionHeaderText>
               <LottieViewWrapper>
                 <StyledLottieView
                   key="empty"
@@ -182,13 +182,13 @@ const DevScreen = ({ language, updateLanguage }) => {
   )
 }
 
-DevScreen.propTypes = {
+SettingsScreen.propTypes = {
   language: i18nPropTypes.languagesShape.isRequired,
   updateLanguage: PropTypes.func.isRequired
 }
 
-DevScreen.navigationOptions = ({ screenProps: { t } }) => ({
-  title: t('Dev.HeaderTitle')
+SettingsScreen.navigationOptions = ({ screenProps: { t } }) => ({
+  title: t('Settings.HeaderTitle')
 })
 
-export default DevScreen
+export default SettingsScreen

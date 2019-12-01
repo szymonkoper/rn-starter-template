@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DevScreen renders correctly 1`] = `
+exports[`SettingsScreen renders correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
   style={
@@ -52,7 +52,7 @@ exports[`DevScreen renders correctly 1`] = `
             ]
           }
         >
-          Dev.VersionTitle
+          Settings.VersionTitle
         </Text>
         <Text
           style={
@@ -118,7 +118,7 @@ exports[`DevScreen renders correctly 1`] = `
             ]
           }
         >
-          Dev.LanguageTitle
+          Settings.LanguageTitle
         </Text>
         <View
           style={
@@ -230,7 +230,7 @@ exports[`DevScreen renders correctly 1`] = `
             ]
           }
         >
-          Dev.EnvTitle
+          Settings.EnvTitle
         </Text>
         <Text
           style={
@@ -558,7 +558,7 @@ exports[`DevScreen renders correctly 1`] = `
             ]
           }
         >
-          Dev.LottieTitle
+          Settings.LottieTitle
         </Text>
         <View
           style={

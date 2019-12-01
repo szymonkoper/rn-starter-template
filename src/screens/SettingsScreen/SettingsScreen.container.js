@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { settingsActions, settingsSelectors } from 'reducers/settings'
 import { getLocale, i18nConstants } from 'i18n'
 
-import DevScreen from './DevScreen'
+import SettingsScreen from './SettingsScreen'
 
 const mapStateToProps = ({ settings }) => {
   return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = {
   updateLanguage: settingsActions.updateLanguage
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DevScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen)
