@@ -127,52 +127,56 @@ const DevScreen = ({ language, updateLanguage }) => {
           </LanguageOptionsWrapper>
         </Section>
 
-        <Section>
-          <SectionHeaderText>{t('Dev.EnvTitle')}</SectionHeaderText>
-          {Object.entries(Config)
-            .filter(([_, value]) => typeof value === 'string')
-            .map(([key, value]) => (
-              <SectionContentText key={key}>
-                {`${key}=`} <ValueLongText>{`${value}`}</ValueLongText>
-              </SectionContentText>
-            ))}
-        </Section>
+        {__DEV__ && (
+          <>
+            <Section>
+              <SectionHeaderText>{t('Dev.EnvTitle')}</SectionHeaderText>
+              {Object.entries(Config)
+                .filter(([_, value]) => typeof value === 'string')
+                .map(([key, value]) => (
+                  <SectionContentText key={key}>
+                    {`${key}=`} <ValueLongText>{`${value}`}</ValueLongText>
+                  </SectionContentText>
+                ))}
+            </Section>
 
-        <Section>
-          <SectionHeaderText>API</SectionHeaderText>
-          <CallResultInfo
-            title="REST"
-            get={callRestExampleGet}
-            requestState={restExampleGetRequestState}
-          />
-          <CallResultInfo
-            title="GraphQL"
-            get={callGqlSchemaGet}
-            requestState={gqlSchemaGetRequestState}
-          />
-        </Section>
+            <Section>
+              <SectionHeaderText>API</SectionHeaderText>
+              <CallResultInfo
+                title="REST"
+                get={callRestExampleGet}
+                requestState={restExampleGetRequestState}
+              />
+              <CallResultInfo
+                title="GraphQL"
+                get={callGqlSchemaGet}
+                requestState={gqlSchemaGetRequestState}
+              />
+            </Section>
 
-        <Section>
-          <SectionHeaderText>{t('Dev.LottieTitle')}</SectionHeaderText>
-          <LottieViewWrapper>
-            <StyledLottieView
-              key="empty"
-              source={require('lottie/empty.json')}
-            />
-            <StyledLottieView
-              key="success"
-              source={require('lottie/success.json')}
-            />
-            <StyledLottieView
-              key="failure"
-              source={require('lottie/failure.json')}
-            />
-            <StyledLottieView
-              key="loading"
-              source={require('lottie/loading.json')}
-            />
-          </LottieViewWrapper>
-        </Section>
+            <Section>
+              <SectionHeaderText>{t('Dev.LottieTitle')}</SectionHeaderText>
+              <LottieViewWrapper>
+                <StyledLottieView
+                  key="empty"
+                  source={require('lottie/empty.json')}
+                />
+                <StyledLottieView
+                  key="success"
+                  source={require('lottie/success.json')}
+                />
+                <StyledLottieView
+                  key="failure"
+                  source={require('lottie/failure.json')}
+                />
+                <StyledLottieView
+                  key="loading"
+                  source={require('lottie/loading.json')}
+                />
+              </LottieViewWrapper>
+            </Section>
+          </>
+        )}
       </ScrollView>
     </ScreenContainer>
   )
