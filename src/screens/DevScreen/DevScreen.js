@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
@@ -6,6 +6,7 @@ import Config from 'react-native-config'
 import { useLazyQuery } from '@apollo/react-hooks'
 import { i18nConstants, i18nPropTypes } from 'i18n'
 import { schemaQueriesQuery } from 'api/graphql/queries/schemaQueries'
+import { restClient } from 'api'
 import {
   ApiCallButton,
   ApiCallButtonText,
@@ -67,9 +68,26 @@ CallResultInfo.defaultProps = {
 const DevScreen = ({ language, updateLanguage }) => {
   const { t } = useTranslation()
   const [
-    getGqlSchema,
-    getGqlSchemaRequestState
+    callGqlSchemaGet,
+    gqlSchemaGetRequestState
   ] = useLazyQuery(schemaQueriesQuery, { fetchPolicy: 'no-cache' })
+
+  const [restExampleGetRequestState, setRestExampleGetRequestState] = useState({
+    loading: false,
+    error: null,
+    data: null
+  })
+
+  const callRestExampleGet = async () => {
+    setRestExampleGetRequestState({ loading: true, data: null, error: null })
+    const EXAMPLE_ENDPOINT = 'employees'
+    try {
+      const data = await restClient.get(EXAMPLE_ENDPOINT)
+      setRestExampleGetRequestState({ loading: false, data, error: null })
+    } catch (error) {
+      setRestExampleGetRequestState({ loading: false, data: null, error })
+    }
+  }
 
   return (
     <ScreenContainer>
@@ -123,9 +141,14 @@ const DevScreen = ({ language, updateLanguage }) => {
         <Section>
           <SectionHeaderText>API</SectionHeaderText>
           <CallResultInfo
+            title="REST"
+            get={callRestExampleGet}
+            requestState={restExampleGetRequestState}
+          />
+          <CallResultInfo
             title="GraphQL"
-            get={getGqlSchema}
-            requestState={getGqlSchemaRequestState}
+            get={callGqlSchemaGet}
+            requestState={gqlSchemaGetRequestState}
           />
         </Section>
 
