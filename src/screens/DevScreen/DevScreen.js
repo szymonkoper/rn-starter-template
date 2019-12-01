@@ -183,4 +183,8 @@ DevScreen.propTypes = {
   updateLanguage: PropTypes.func.isRequired
 }
 
+DevScreen.navigationOptions = ({ screenProps: { t } }) => ({
+  title: t('Dev.HeaderTitle')
+})
+
 export default DevScreen

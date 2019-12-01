@@ -4,7 +4,10 @@ import createNativeStackNavigator from 'react-native-screens/createNativeStackNa
 import screens, { initialRouteName } from './screens'
 
 const options = {
-  initialRouteName
+  initialRouteName,
+  defaultNavigationOptions: {
+    title: 'xkcd'
+  }
 }
 
 const Navigator = createNativeStackNavigator(screens, options)

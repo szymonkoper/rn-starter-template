@@ -5,6 +5,7 @@
     "No": "No"
   },
   "Dev": {
+    "HeaderTitle": "Settings",
     "LottieTitle": "Lottie animations",
     "EnvTitle": ".env file",
     "LanguageTitle": "Language",
