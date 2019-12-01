@@ -1,3 +1,4 @@
+import 'cross-fetch/polyfill'
 import ApolloClient from 'apollo-boost'
 import Config from 'react-native-config'
 
