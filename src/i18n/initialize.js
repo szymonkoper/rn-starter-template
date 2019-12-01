@@ -1,7 +1,7 @@
 import i18next from 'i18next'
 import Pseudo from 'i18next-pseudo'
 import { initReactI18next } from 'react-i18next'
-import { languageSelector } from '../reducers/settings/selectors'
+import { languageSelector } from 'reducers/settings/selectors'
 import getLocale from './getLocale'
 import { FALLBACK_LOCALE, LOCALES, PSEUDO_LOCALE_CODE } from './constants'
 
