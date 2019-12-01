@@ -3,9 +3,7 @@ import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
 import Config from 'react-native-config'
-import { useLazyQuery } from '@apollo/react-hooks'
 import { i18nConstants, i18nPropTypes } from 'i18n'
-import { schemaQueriesQuery } from 'api/graphql/queries/schemaQueries'
 import { restClient } from 'api'
 import {
   ApiCallButton,
