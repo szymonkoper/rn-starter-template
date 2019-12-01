@@ -10,11 +10,11 @@ export default function(state = INITIAL_STATE, action = {}) {
   const { type, payload } = action
   switch (type) {
     case TYPES.LATEST_COMIC_GET_REQUEST:
-      return { data: null, error: null, loading: true }
+      return { ...INITIAL_STATE, loading: true }
     case TYPES.LATEST_COMIC_GET_SUCCESS:
-      return { data: null, error: null, loading: true }
+      return { ...INITIAL_STATE, data: payload.latestComicMetadata }
     case TYPES.LATEST_COMIC_GET_FAILURE:
-      return { data: null, error: null, loading: true }
+      return { ...INITIAL_STATE, error: payload.error }
     default:
       return state
   }
