@@ -4,8 +4,12 @@
     "Yes": "Yes",
     "No": "No"
   },
+  "Error": {
+    "NoNetwork": "Network error"
+  },
   "Comics": {
-    "HeaderTitle": "xkcd comics"
+    "HeaderTitle": "xkcd comics",
+    "EmptyStateMessage": "Pull down to refresh"
   },
   "Settings": {
     "HeaderTitle": "Settings",

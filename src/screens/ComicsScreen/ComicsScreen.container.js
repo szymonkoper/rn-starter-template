@@ -1,13 +1,15 @@
 import { connect } from 'react-redux'
-import { getLatestComic } from 'reducers/api/xkcdRest/latestComicGetRequest/actions'
+import { getNextComics, resetComics } from 'reducers/api/xkcdRest/actions'
+import { selectComicsList } from 'reducers/api/xkcdRest/selectors'
 import ComicsScreen from './ComicsScreen'
 
-const mapStateToProps = ({
-  api: {
-    xkcdRest: { latestComicGetRequest }
-  }
-}) => ({ latestComicGetRequest })
+const mapStateToProps = ({ api: { xkcdRest } }) => ({
+  comics: selectComicsList(xkcdRest),
+  error: xkcdRest.error,
+  hasNext: xkcdRest.hasNext,
+  loading: xkcdRest.loading
+})
 
-const mapDispatchToProps = { getLatestComic }
+const mapDispatchToProps = { getNextComics, resetComics }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComicsScreen)
