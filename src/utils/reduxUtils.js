@@ -1,7 +1,8 @@
 export const VARIANT = {
   REQUEST: 'REQUEST',
   SUCCESS: 'SUCCESS',
-  FAILURE: 'FAILURE'
+  FAILURE: 'FAILURE',
+  RESET: 'RESET'
 }
 
 const createActionType = (prefix, variant) => `${prefix}_${variant}`
