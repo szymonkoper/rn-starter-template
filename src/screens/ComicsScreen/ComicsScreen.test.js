@@ -1,5 +1,4 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
 import { fireEvent, render } from 'react-native-testing-library'
 import { I18nextProvider } from 'react-i18next'
 import i18next from 'i18n/__test__/testInitialize'
