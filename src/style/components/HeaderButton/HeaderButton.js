@@ -12,8 +12,6 @@ const TextContent = styled(Text)`
   font-size: ${fontSizeS};
 `
 
-// TODO: It can look better as a "hamburger" icon
-// I could use react-native-vector-icons with FontAwesome
 const HeaderButton = ({ onPress, title }) => (
   <TouchableContainer onPress={onPress}>
     <TextContent>{title}</TextContent>
