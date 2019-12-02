@@ -8,8 +8,8 @@ import { i18nConstants, i18nPropTypes } from 'i18n'
 import { schemaQueriesQuery } from 'api/graphql/queries/schemaQueries'
 import { restClient } from 'api'
 import {
-  ApiCallButton,
-  ApiCallButtonText,
+  DevButton,
+  DevButtonText,
   LanguageOptionsWrapper,
   LanguageText,
   LottieViewWrapper,
@@ -41,9 +41,9 @@ const CallResultInfo = ({
       <SectionContentText>
         {`data: ${data ? t('Common.Yes') : t('Common.No')}`}
       </SectionContentText>
-      <ApiCallButton onPress={get}>
-        <ApiCallButtonText>Call</ApiCallButtonText>
-      </ApiCallButton>
+      <DevButton onPress={get}>
+        <DevButtonText>Call</DevButtonText>
+      </DevButton>
     </Section>
   )
 }
@@ -150,6 +150,24 @@ const DevScreen = ({ language, updateLanguage }) => {
             get={callGqlSchemaGet}
             requestState={gqlSchemaGetRequestState}
           />
+        </Section>
+
+        <Section>
+          <SectionHeaderText>{t('Dev.Notifications')}</SectionHeaderText>
+          <SectionContentText>
+            TODO show if permissions given
+          </SectionContentText>
+          <SectionContentText>
+            TODO button to ask for permissions
+          </SectionContentText>
+          <DevButton
+            onPress={() => {
+              console.log('Show notification')
+              console.log('Should be shown')
+            }}
+          >
+            <DevButtonText>{t('Dev.ShowNotificationLocal')}</DevButtonText>
+          </DevButton>
         </Section>
 
         <Section>

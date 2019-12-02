@@ -73,16 +73,15 @@ export const StyledLottieView = styled(LottieView).attrs(() => ({
   width: 30%;
 `
 
-export const ApiCallButton = styled.TouchableOpacity`
+export const DevButton = styled.TouchableOpacity`
   align-items: center;
   background-color: ${backgroundColorTertiary};
   border-radius: 16px;
   justify-content: center;
   min-height: 40px;
-  width: 50%;
 `
 
-export const ApiCallButtonText = styled(Text)`
+export const DevButtonText = styled(Text)`
   color: ${white};
   font-size: ${fontSizeS};
 `
