@@ -79,7 +79,7 @@ const ComicsScreen = ({
         )}
         keyExtractor={({ num }) => num.toString()}
         onEndReached={() => {
-          if (!loading && hasNext) getNextComics()
+          if (hasNext) getNextComics()
         }}
         onEndReachedThreshold={0.5}
         onRefresh={async () => {

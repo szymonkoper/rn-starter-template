@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
+import { backgroundColorPrimary } from 'style/colors'
 
 export const ScreenContainer = styled.SafeAreaView`
+  background-color: ${backgroundColorPrimary};
   flex: 1;
 `
 
