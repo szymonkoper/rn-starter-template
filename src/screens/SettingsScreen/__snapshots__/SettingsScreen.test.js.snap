@@ -138,7 +138,7 @@ exports[`SettingsScreen renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "#b9baa3",
+                  "backgroundColor": "#e0e0e0",
                   "color": "#2978a0",
                   "flexBasis": 0,
                   "flexGrow": 1,
@@ -182,7 +182,7 @@ exports[`SettingsScreen renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "#b9baa3",
+                  "backgroundColor": "#e0e0e0",
                   "color": "#2978a0",
                   "flexBasis": 0,
                   "flexGrow": 1,
