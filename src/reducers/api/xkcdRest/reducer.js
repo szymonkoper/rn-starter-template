@@ -33,7 +33,7 @@ export default (state = INITIAL_STATE, action = {}) => {
         return acc
       }, {})
 
-      const nextNums = [...new Set([...nums, ...newNums])]
+      const nextNums = [...new Set([...nums, ...newNums])].sort()
 
       const nextComicsByNum = { ...comicsByNum, ...newComicsByNum }
 
