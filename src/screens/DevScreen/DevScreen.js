@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
@@ -79,8 +79,6 @@ const DevScreen = ({ language, updateLanguage }) => {
     error: null,
     data: null
   })
-
-  const [notificationsPermissions, setNotificationsPermissions] = useState({})
 
   const callRestExampleGet = async () => {
     setRestExampleGetRequestState({ loading: true, data: null, error: null })
@@ -164,7 +162,6 @@ const DevScreen = ({ language, updateLanguage }) => {
             <DevButton
               onPress={() => {
                 console.log('TODO: ask for permissions')
-                )
               }}
             >
               <DevButtonText>{t('Dev.Refresh')}</DevButtonText>
@@ -173,9 +170,7 @@ const DevScreen = ({ language, updateLanguage }) => {
 
           <Section>
             <SectionContentText>{t('Dev.PermissionsShow')}</SectionContentText>
-            <SectionContentText>
-              TODO permissions state
-            </SectionContentText>
+            <SectionContentText>TODO permissions state</SectionContentText>
             <DevButton
               onPress={() => {
                 console.log('TODO: check permissions')
