@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
@@ -23,6 +23,8 @@ import {
   ValueShortText
 } from './DevScreen.styled'
 
+const NOTIFICATION_DELAY_SECONDS = 10
+
 const CallResultInfo = ({
   title,
   get,
@@ -42,7 +44,7 @@ const CallResultInfo = ({
         {`data: ${data ? t('Common.Yes') : t('Common.No')}`}
       </SectionContentText>
       <DevButton onPress={get}>
-        <DevButtonText>Call</DevButtonText>
+        <DevButtonText>{t('Dev.Call')}</DevButtonText>
       </DevButton>
     </Section>
   )
@@ -77,6 +79,8 @@ const DevScreen = ({ language, updateLanguage }) => {
     error: null,
     data: null
   })
+
+  const [notificationsPermissions, setNotificationsPermissions] = useState({})
 
   const callRestExampleGet = async () => {
     setRestExampleGetRequestState({ loading: true, data: null, error: null })
@@ -154,20 +158,47 @@ const DevScreen = ({ language, updateLanguage }) => {
 
         <Section>
           <SectionHeaderText>{t('Dev.Notifications')}</SectionHeaderText>
-          <SectionContentText>
-            TODO show if permissions given
-          </SectionContentText>
-          <SectionContentText>
-            TODO button to ask for permissions
-          </SectionContentText>
-          <DevButton
-            onPress={() => {
-              console.log('Show notification')
-              console.log('Should be shown')
-            }}
-          >
-            <DevButtonText>{t('Dev.ShowNotificationLocal')}</DevButtonText>
-          </DevButton>
+
+          <Section>
+            <SectionContentText>{t('Dev.PermissionsAsk')}</SectionContentText>
+            <DevButton
+              onPress={() => {
+                console.log('TODO: ask for permissions')
+                )
+              }}
+            >
+              <DevButtonText>{t('Dev.Refresh')}</DevButtonText>
+            </DevButton>
+          </Section>
+
+          <Section>
+            <SectionContentText>{t('Dev.PermissionsShow')}</SectionContentText>
+            <SectionContentText>
+              TODO permissions state
+            </SectionContentText>
+            <DevButton
+              onPress={() => {
+                console.log('TODO: check permissions')
+              }}
+            >
+              <DevButtonText>{t('Dev.Refresh')}</DevButtonText>
+            </DevButton>
+          </Section>
+
+          <Section>
+            <SectionContentText>
+              {t('Dev.ShowNotificationLocalDelayed', {
+                seconds: NOTIFICATION_DELAY_SECONDS
+              })}
+            </SectionContentText>
+            <DevButton
+              onPress={() => {
+                console.log('TODO: show notification')
+              }}
+            >
+              <DevButtonText>{t('Dev.Call')}</DevButtonText>
+            </DevButton>
+          </Section>
         </Section>
 
         <Section>

@@ -5,10 +5,14 @@
     "No": "No"
   },
   "Dev": {
+    "Call": "Call",
+    "Refresh": "Refresh",
     "LottieTitle": "Lottie animations",
     "EnvTitle": ".env file",
     "Notifications": "Notifications",
-    "ShowNotificationLocal": "Show local notification",
+    "PermissionsAsk": "Ask for permissions",
+    "PermissionsShow": "Permissions",
+    "ShowNotificationLocalDelayed": "Show notification in {{seconds}} seconds",
     "LanguageTitle": "Language",
     "VersionTitle": "Version",
     "VersionNumbers": "Build mode:\n<1>{{buildMode}}</1>,\n\nApp version:\n<0>{{appVersion}}</0>,\n\nBuild version:\n<0>{{buildVersion}}</0>,\n\nBundle identifier:\n<1>{{bundleIdentifier}}</1>"

@@ -5,10 +5,14 @@
     "No": "No"
   },
   "Dev": {
+    "Call": "Wywołaj",
+    "Refresh": "Odśwież",
     "LottieTitle": "Animacje Lottie",
     "EnvTitle": "Plik .env",
     "Notifications": "Powiadomienia",
-    "ShowNotificationLocal": "Pokaż lokalne powiadomienie",
+    "PermissionsAsk": "Poproś o pozwolenia",
+    "PermissionsShow": "Pozwolenia",
+    "ShowNotificationLocalDelayed": "Pokaż powiadomienie za {{seconds}} sekund",
     "LanguageTitle": "Język",
     "VersionTitle": "Wersja",
     "VersionNumbers": "Tryb kompilacji:\n<1>{{buildMode}}</1>,\n\nWersja aplikacji:\n<0>{{appVersion}}</0>,\n\nWersja kompilacji:\n<0>{{buildVersion}}</0>,\n\nIdentyfikator pakietu:\n<1>{{bundleIdentifier}}</1>"
