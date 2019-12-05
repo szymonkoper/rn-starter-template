@@ -26,7 +26,8 @@ exports[`DevScreen renders correctly 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#1e1e1e",
+              "borderColor": "#2978a0",
+              "borderRadius": 16,
               "borderWidth": 1,
               "marginBottom": 16,
               "marginLeft": 16,
@@ -92,7 +93,8 @@ exports[`DevScreen renders correctly 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#1e1e1e",
+              "borderColor": "#2978a0",
+              "borderRadius": 16,
               "borderWidth": 1,
               "marginBottom": 16,
               "marginLeft": 16,
@@ -204,7 +206,8 @@ exports[`DevScreen renders correctly 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#1e1e1e",
+              "borderColor": "#2978a0",
+              "borderRadius": 16,
               "borderWidth": 1,
               "marginBottom": 16,
               "marginLeft": 16,
@@ -289,7 +292,8 @@ exports[`DevScreen renders correctly 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#1e1e1e",
+              "borderColor": "#2978a0",
+              "borderRadius": 16,
               "borderWidth": 1,
               "marginBottom": 16,
               "marginLeft": 16,
@@ -321,7 +325,8 @@ exports[`DevScreen renders correctly 1`] = `
           style={
             Array [
               Object {
-                "borderColor": "#1e1e1e",
+                "borderColor": "#2978a0",
+                "borderRadius": 16,
                 "borderWidth": 1,
                 "marginBottom": 16,
                 "marginLeft": 16,
@@ -404,7 +409,6 @@ exports[`DevScreen renders correctly 1`] = `
                 "justifyContent": "center",
                 "minHeight": 40,
                 "opacity": 1,
-                "width": "50%",
               }
             }
           >
@@ -418,7 +422,7 @@ exports[`DevScreen renders correctly 1`] = `
                 ]
               }
             >
-              Call
+              Dev.Call
             </Text>
           </View>
         </View>
@@ -426,7 +430,8 @@ exports[`DevScreen renders correctly 1`] = `
           style={
             Array [
               Object {
-                "borderColor": "#1e1e1e",
+                "borderColor": "#2978a0",
+                "borderRadius": 16,
                 "borderWidth": 1,
                 "marginBottom": 16,
                 "marginLeft": 16,
@@ -509,7 +514,6 @@ exports[`DevScreen renders correctly 1`] = `
                 "justifyContent": "center",
                 "minHeight": 40,
                 "opacity": 1,
-                "width": "50%",
               }
             }
           >
@@ -523,7 +527,7 @@ exports[`DevScreen renders correctly 1`] = `
                 ]
               }
             >
-              Call
+              Dev.Call
             </Text>
           </View>
         </View>
@@ -532,7 +536,255 @@ exports[`DevScreen renders correctly 1`] = `
         style={
           Array [
             Object {
-              "borderColor": "#1e1e1e",
+              "borderColor": "#2978a0",
+              "borderRadius": 16,
+              "borderWidth": 1,
+              "marginBottom": 16,
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 16,
+              "paddingBottom": 8,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "paddingTop": 8,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 32,
+                "fontWeight": "bold",
+                "marginBottom": 16,
+              },
+            ]
+          }
+        >
+          Dev.Notifications
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "borderColor": "#2978a0",
+                "borderRadius": 16,
+                "borderWidth": 1,
+                "marginBottom": 16,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 16,
+                "paddingBottom": 8,
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 8,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1e1e1e",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            Dev.PermissionsAsk
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2978a0",
+                "borderRadius": 16,
+                "justifyContent": "center",
+                "minHeight": 40,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              Dev.Call
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "borderColor": "#2978a0",
+                "borderRadius": 16,
+                "borderWidth": 1,
+                "marginBottom": 16,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 16,
+                "paddingBottom": 8,
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 8,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1e1e1e",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            Dev.PermissionsShow
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1e1e1e",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            true
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2978a0",
+                "borderRadius": 16,
+                "justifyContent": "center",
+                "minHeight": 40,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              Dev.Refresh
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "borderColor": "#2978a0",
+                "borderRadius": 16,
+                "borderWidth": 1,
+                "marginBottom": 16,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 16,
+                "paddingBottom": 8,
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 8,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1e1e1e",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            Dev.ShowNotification
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2978a0",
+                "borderRadius": 16,
+                "justifyContent": "center",
+                "minHeight": 40,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              Dev.Call
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "borderColor": "#2978a0",
+              "borderRadius": 16,
               "borderWidth": 1,
               "marginBottom": 16,
               "marginLeft": 16,
