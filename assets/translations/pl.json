@@ -2,7 +2,8 @@
   "languageCode": "pl",
   "Common": {
     "Yes": "Yes",
-    "No": "No"
+    "No": "No",
+    "Cancel": "Anuluj"
   },
   "Dev": {
     "Call": "Wywołaj",
@@ -12,9 +13,18 @@
     "Notifications": "Powiadomienia",
     "PermissionsAsk": "Poproś o pozwolenia",
     "PermissionsShow": "Pozwolenia",
-    "ShowNotificationLocalDelayed": "Pokaż powiadomienie za {{seconds}} sekund",
+    "ShowNotification": "Pokaż powiadomienie",
     "LanguageTitle": "Język",
     "VersionTitle": "Wersja",
     "VersionNumbers": "Tryb kompilacji:\n<1>{{buildMode}}</1>,\n\nWersja aplikacji:\n<0>{{appVersion}}</0>,\n\nWersja kompilacji:\n<0>{{buildVersion}}</0>,\n\nIdentyfikator pakietu:\n<1>{{bundleIdentifier}}</1>"
+  },
+  "Settings": {
+    "Notifications": {
+      "AlertNoPermission": {
+        "Title": "Brak pozwolenia",
+        "Message": "Z powodu braku pozwolenia aplikacja nie może wyświetlać powiadomień. Można to zmienić w ustawieniach.",
+        "OpenSettings": "Otwórz ustawienia"
+      }
+    }
   }
 }

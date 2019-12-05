@@ -72,8 +72,9 @@ android/app/.settings
 ios/sentry.properties
 android/sentry.properties
 
-# google services configuration
-android/app/google-services.json
+# firebase
+google-services.json
+GoogleService-Info.plist
 
 # pods
 ios/pods

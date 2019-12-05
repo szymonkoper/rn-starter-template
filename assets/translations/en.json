@@ -2,7 +2,8 @@
   "languageCode": "en",
   "Common": {
     "Yes": "Yes",
-    "No": "No"
+    "No": "No",
+    "Cancel": "Cancel"
   },
   "Dev": {
     "Call": "Call",
@@ -12,9 +13,18 @@
     "Notifications": "Notifications",
     "PermissionsAsk": "Ask for permissions",
     "PermissionsShow": "Permissions",
-    "ShowNotificationLocalDelayed": "Show notification in {{seconds}} seconds",
+    "ShowNotification": "Show notification",
     "LanguageTitle": "Language",
     "VersionTitle": "Version",
     "VersionNumbers": "Build mode:\n<1>{{buildMode}}</1>,\n\nApp version:\n<0>{{appVersion}}</0>,\n\nBuild version:\n<0>{{buildVersion}}</0>,\n\nBundle identifier:\n<1>{{bundleIdentifier}}</1>"
+  },
+  "Settings": {
+    "Notifications": {
+      "AlertNoPermission": {
+        "Title": "No permission",
+        "Message": "The app can't display notifications because of denied permission. It can be switched only in settings.",
+        "OpenSettings": "Open settings"
+      }
+    }
   }
 }

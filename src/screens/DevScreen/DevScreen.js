@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import VersionNumber from 'react-native-version-number'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
@@ -7,6 +7,7 @@ import { useLazyQuery } from '@apollo/react-hooks'
 import { i18nConstants, i18nPropTypes } from 'i18n'
 import { schemaQueriesQuery } from 'api/graphql/queries/schemaQueries'
 import { restClient } from 'api'
+import * as notifications from 'notifications'
 import {
   DevButton,
   DevButtonText,
@@ -23,7 +24,14 @@ import {
   ValueShortText
 } from './DevScreen.styled'
 
-const NOTIFICATION_DELAY_SECONDS = 10
+const NOTIFICATIONS_TESTING_CHANNEL_ID = 'rn-st-testing-channel'
+
+const testingChannelDetails = {
+  id: NOTIFICATIONS_TESTING_CHANNEL_ID,
+  name: 'Testing channel',
+  importance: notifications.Importance.Urgent,
+  description: 'Channel only for testing notifications'
+}
 
 const CallResultInfo = ({
   title,
@@ -73,6 +81,20 @@ const DevScreen = ({ language, updateLanguage }) => {
     callGqlSchemaGet,
     gqlSchemaGetRequestState
   ] = useLazyQuery(schemaQueriesQuery, { fetchPolicy: 'no-cache' })
+
+  useEffect(() => {
+    notifications.createChannel(testingChannelDetails)
+  }, [])
+
+  const [notificationsPermission, setNotificationsPermission] = useState(null)
+
+  const refreshNotificationsPermission = () => {
+    notifications.hasPermission().then(setNotificationsPermission)
+  }
+
+  useEffect(() => {
+    refreshNotificationsPermission()
+  }, [])
 
   const [restExampleGetRequestState, setRestExampleGetRequestState] = useState({
     loading: false,
@@ -161,34 +183,42 @@ const DevScreen = ({ language, updateLanguage }) => {
             <SectionContentText>{t('Dev.PermissionsAsk')}</SectionContentText>
             <DevButton
               onPress={() => {
-                console.log('TODO: ask for permissions')
+                notifications
+                  .requestPermission()
+                  .then(refreshNotificationsPermission)
+                  .catch(() => {
+                    notifications.showPermissionAlert(t)
+                  })
               }}
             >
-              <DevButtonText>{t('Dev.Refresh')}</DevButtonText>
+              <DevButtonText>{t('Dev.Call')}</DevButtonText>
             </DevButton>
           </Section>
 
           <Section>
             <SectionContentText>{t('Dev.PermissionsShow')}</SectionContentText>
-            <SectionContentText>TODO permissions state</SectionContentText>
-            <DevButton
-              onPress={() => {
-                console.log('TODO: check permissions')
-              }}
-            >
+            <SectionContentText>
+              {notificationsPermission === null ||
+              notificationsPermission === undefined
+                ? '???'
+                : notificationsPermission.toString()}
+            </SectionContentText>
+            <DevButton onPress={refreshNotificationsPermission}>
               <DevButtonText>{t('Dev.Refresh')}</DevButtonText>
             </DevButton>
           </Section>
 
           <Section>
-            <SectionContentText>
-              {t('Dev.ShowNotificationLocalDelayed', {
-                seconds: NOTIFICATION_DELAY_SECONDS
-              })}
-            </SectionContentText>
+            <SectionContentText>{t('Dev.ShowNotification')}</SectionContentText>
             <DevButton
               onPress={() => {
-                console.log('TODO: show notification')
+                notifications.showNotification({
+                  channelId: NOTIFICATIONS_TESTING_CHANNEL_ID,
+                  notificationId: '1',
+                  body: 'This is a body of example notification',
+                  subtitle: 'This is a subtitle',
+                  title: 'Title Here'
+                })
               }}
             >
               <DevButtonText>{t('Dev.Call')}</DevButtonText>
