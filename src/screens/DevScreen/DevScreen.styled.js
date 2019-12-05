@@ -19,7 +19,8 @@ export const ScreenContainer = styled.SafeAreaView`
 export const ScrollView = styled.ScrollView``
 
 export const Section = styled.View`
-  border-color: ${textColorSecondary};
+  border-color: ${textColorTertiary};
+  border-radius: 16px;
   border-width: 1px;
   margin: ${screenMargin}px;
   padding: 8px;
