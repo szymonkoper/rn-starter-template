@@ -32,6 +32,14 @@ It has preconfigured tech stack that I use the most, so I can mostly pass over t
 - and finally a dev screen with useful settings and previews, that you can access with 4 quick taps at *"Welcome to React"* header,
 - default setup for *Danger.js* (it works with *CI* of this repository).
 
+## Firebase
+
+Firebase is used in the project. It needs config files if you want to use it. You can generate those in the [Firebase console](https://firebase.google.com/).
+
+Config files should be put in the platform specific directories:
+
+- `google-services.json` into `android/app`,
+- `GoogleService-Info.plist` into `ios`.
 
 ## Can I use it?
 
