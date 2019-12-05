@@ -20,6 +20,7 @@
 		672DC324992B9922776CBCD3 /* Pods_RNStarterTemplate_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E5111886D76FD5146278DD /* Pods_RNStarterTemplate_tvOS.framework */; };
 		803B1DC68FE649FE3355220B /* Pods_RNStarterTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B02C07E26E551430E17888 /* Pods_RNStarterTemplate.framework */; };
 		AD685ADB239827350012ECBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD685ADA239827350012ECBA /* GoogleService-Info.plist */; };
+		ADE1B7C62399C9DB006E556D /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE1B7C52399C9DB006E556D /* RNBackgroundFetch+AppDelegate.m */; };
 		F14010507A84687D2AAF3A6E /* Pods_RNStarterTemplate_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5506C640C8106694B1D2BB /* Pods_RNStarterTemplate_tvOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		67B751B14278B3734A3DC0E0 /* Pods-RNStarterTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarterTemplate.debug.xcconfig"; path = "Target Support Files/Pods-RNStarterTemplate/Pods-RNStarterTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		6FFE25FCC42D19B416525B18 /* Pods-RNStarterTemplate-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarterTemplate-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RNStarterTemplate-tvOS/Pods-RNStarterTemplate-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AD685ADA239827350012ECBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ADE1B7C52399C9DB006E556D /* RNBackgroundFetch+AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RNBackgroundFetch+AppDelegate.m"; path = "../node_modules/react-native-background-fetch/ios/RNBackgroundFetch/RNBackgroundFetch+AppDelegate.m"; sourceTree = "<group>"; };
 		B923E1AEB958239834DE42CE /* Pods-RNStarterTemplate-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarterTemplate-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RNStarterTemplate-tvOSTests/Pods-RNStarterTemplate-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCABE06C20B132E50F5F0E1F /* Pods-RNStarterTemplate-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarterTemplate-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RNStarterTemplate-tvOS/Pods-RNStarterTemplate-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D6B02C07E26E551430E17888 /* Pods_RNStarterTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNStarterTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 		13B07FAE1A68108700A75B9A /* RNStarterTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				ADE1B7C52399C9DB006E556D /* RNBackgroundFetch+AppDelegate.m */,
 				AD685ADA239827350012ECBA /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -395,6 +398,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
+				"${BUILT_PRODUCTS_DIR}/RNBackgroundFetch/RNBackgroundFetch.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCAsyncStorage/RNCAsyncStorage.framework",
 				"${BUILT_PRODUCTS_DIR}/RNGestureHandler/RNGestureHandler.framework",
 				"${BUILT_PRODUCTS_DIR}/RNLocalize/RNLocalize.framework",
@@ -432,6 +436,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNBackgroundFetch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCAsyncStorage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNGestureHandler.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNLocalize.framework",
@@ -621,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE1B7C62399C9DB006E556D /* RNBackgroundFetch+AppDelegate.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

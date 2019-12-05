@@ -12,12 +12,14 @@ import i18next from 'i18n/__test__/testInitialize'
 import DevScreen from './DevScreen'
 
 jest.mock('notifications', () => ({
-  createChannel: jest.fn(),
-  openSettings: jest.fn(),
-  showPermissionAlert: jest.fn(),
-  hasPermission: jest.fn(() => Promise.resolve(true)),
-  requestPermission: jest.fn(() => Promise.resolve(true)),
-  showNotification: jest.fn(),
+  actions: {
+    createChannel: jest.fn(),
+    openSettings: jest.fn(),
+    showPermissionAlert: jest.fn(),
+    hasPermission: jest.fn(() => Promise.resolve(true)),
+    requestPermission: jest.fn(() => Promise.resolve(true)),
+    showNotification: jest.fn()
+  },
   Importance: { Urgent: 'Urgent' }
 }))
 

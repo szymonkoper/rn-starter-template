@@ -9,7 +9,8 @@
     "test": "jest",
     "test:ci": "yarn test --json --output-file coverage/test-results.json --coverage",
     "lint": "eslint .",
-    "postversion": "react-native-version --never-amend"
+    "postversion": "react-native-version --never-amend",
+    "backgroundFetch:android": "adb shell cmd jobscheduler run -f com.rnstartertemplate 999"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
