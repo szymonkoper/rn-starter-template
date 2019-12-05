@@ -31,6 +31,18 @@ It has preconfigured tech stack that I use the most, so I can mostly pass over t
 - and finally a dev screen with useful settings and previews, that you can access with 4 quick taps at _"Welcome to React"_ header,
 - default setup for _Danger.js_ (it works with _CI_ of this repository).
 
+## .env file
+
+You may want to add this file. Network requests examples are based on those APIs. Example `.env` file contents:
+
+```
+# Dummy REST API example
+API_REST_URL=http://dummy.restapiexample.com/
+
+# Dummy GraphQL example from https://www.apollographql.com/docs/react/get-started/
+API_GQL_URL=https://48p1r2roz4.sse.codesandbox.io
+```
+
 ## Firebase
 
 Firebase is used in the project. It needs config files if you want to use it. You can generate those in the [Firebase console](https://firebase.google.com/).
