@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { i18nPropTypes } from 'i18n'
 import { ScreenContainer, ScrollView } from './DevScreen.styled'
-
-// TODO: Move it to sections/index
-import BuildInfoSection from './sections/BuildInfoSection'
-import LocalizationSection from './sections/LocalizationSection'
-import EnvSection from './sections/EnvSection'
-import APISection from './sections/APISection'
-import NotificationsSection from './sections/NotificationsSection'
-import LottieSection from './sections/LottieSection'
+import {
+  APISection,
+  BuildInfoSection,
+  EnvSection,
+  LocalizationSection,
+  LottieSection,
+  NotificationsSection
+} from './sections'
 
 const DevScreen = ({ language, updateLanguage }) => (
   <ScreenContainer>
